@@ -9,8 +9,8 @@ function App() {
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
-      .then((data) => setCountries(data));
-    console.log(countries);
+      .then((data) => setCountries(data))
+      .catch((err)=> console.error("Error fetching data: ",err));
   }, []);
 
   return (
